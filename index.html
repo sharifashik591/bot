@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analyst Portfolio</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Minimal Custom Overrides that Bootstrap doesn't cover directly */
+        body {
+            font-family: 'Poppins', sans-serif;
+            padding-top: 56px;
+            /* Offset for fixed navbar */
+        }
+
+        /* Hero Section Gradient - Bootstrap doesn't have this exact gradient */
+        .hero-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        /* Hover effect for Project Cards */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+        }
+
+        /* Scroll Animation Classes */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, visibility;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="#home">DataPro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section d-flex align-items-center min-vh-100 text-center py-5 fade-in-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="display-3 fw-bold mb-3">John Doe</h1>
+                    <h2 class="h3 fw-light mb-4 text-primary">Data Analyst | Business Analyst | BI Specialist</h2>
+                    <p class="lead mb-5 text-secondary">Turning data into actionable insights for smarter business
+                        decisions.</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#projects" class="btn btn-primary btn-lg rounded-pill px-5 shadow-sm">View Projects</a>
+                        <a href="#contact" class="btn btn-outline-dark btn-lg rounded-pill px-5 shadow-sm">Contact
+                            Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 fade-in-section">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2
+                        class="fw-bold mb-4 position-relative d-inline-block border-bottom border-primary border-3 pb-2">
+                        About Me</h2>
+                    <p class="lead fw-normal text-muted mb-3">I turn raw data into meaningful stories that drive
+                        business strategy.</p>
+                    <p class="mb-4 text-secondary">With a background in Mathematics and Computer Science, I specialize
+                        in transforming complex datasets into actionable insights. My expertise lies in SQL for data
+                        extraction, Python for analysis, and Tableau/Power BI for creating interactive dashboards.</p>
+                    <a href="#" class="btn btn-primary px-4 py-2 shadow-sm"><i class="fas fa-download me-2"></i>Download
+                        Resume</a>
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <div class="row g-4">
+                        <div class="col-6">
+                            <div
+                                class="p-4 bg-white rounded shadow-sm text-center border-bottom border-primary border-3 h-100">
+                                <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+                                <h5 class="fw-bold">Analysis</h5>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div
+                                class="p-4 bg-white rounded shadow-sm text-center border-bottom border-success border-3 h-100">
+                                <i class="fas fa-chart-pie fa-3x text-success mb-3"></i>
+                                <h5 class="fw-bold">Visualization</h5>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div
+                                class="p-4 bg-white rounded shadow-sm text-center border-bottom border-warning border-3 h-100">
+                                <i class="fas fa-database fa-3x text-warning mb-3"></i>
+                                <h5 class="fw-bold">ETL</h5>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div
+                                class="p-4 bg-white rounded shadow-sm text-center border-bottom border-info border-3 h-100">
+                                <i class="fas fa-brain fa-3x text-info mb-3"></i>
+                                <h5 class="fw-bold">Strategy</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 bg-light fade-in-section">
+        <div class="container py-5">
+            <h2 class="text-center fw-bold mb-5"><span class="border-bottom border-primary border-3 pb-2">My
+                    Skills</span></h2>
+            <div class="row">
+                <!-- Technical Skills -->
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h4 class="mb-4 fw-bold">Technical Proficiency</h4>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-medium">Data Analysis & Visualization</span>
+                            <span class="text-primary fw-bold">95%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-medium">SQL & Databases</span>
+                            <span class="text-primary fw-bold">90%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-medium">Python (Pandas, NumPy)</span>
+                            <span class="text-primary fw-bold">85%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="col-md-6">
+                    <h4 class="mb-4 fw-bold">Tools & Technologies</h4>
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        <span class="badge bg-white text-dark shadow-sm py-2 px-3 border"><i
+                                class="fab fa-python text-primary me-2"></i>Python</span>
+                        <span class="badge bg-white text-dark shadow-sm py-2 px-3 border"><i
+                                class="fas fa-database text-warning me-2"></i>SQL</span>
+                        <span class="badge bg-white text-dark shadow-sm py-2 px-3 border"><i
+                                class="fas fa-chart-bar text-success me-2"></i>Tableau</span>
+                        <span class="badge bg-white text-dark shadow-sm py-2 px-3 border"><i
+                                class="fas fa-chart-pie text-warning me-2"></i>Power BI</span>
+                        <span class="badge bg-white text-dark shadow-sm py-2 px-3 border"><i
+                                class="fas fa-file-excel text-success me-2"></i>Excel</span>
+                        <span class="badge bg-white text-dark shadow-sm py-2 px-3 border"><i
+                                class="fab fa-git-alt text-danger me-2"></i>Git</span>
+                    </div>
+
+                    <h4 class="mb-3 fw-bold">Soft Skills</h4>
+                    <ul class="list-unstyled text-secondary">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Critical Thinking &
+                            Problem Solving</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Effective Communication
+                        </li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Stakeholder Management
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5 fade-in-section">
+        <div class="container py-5">
+            <h2 class="text-center fw-bold mb-5"><span class="border-bottom border-primary border-3 pb-2">Featured
+                    Projects</span></h2>
+            <div class="row g-4">
+                <!-- Project 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0 hover-lift">
+                        <div class="card-img-top bg-light d-flex align-items-center justify-content-center py-5">
+                            <i class="fas fa-chart-line fa-4x text-primary"></i>
+                        </div>
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Power BI</span>
+                            <h5 class="card-title fw-bold mt-2">Sales Dashboard</h5>
+                            <p class="card-text text-muted small">Interactive dashboard tracking KPIs and regional
+                                performance for a retail giant.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 pb-3">
+                            <a href="#" class="btn btn-sm btn-outline-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0 hover-lift">
+                        <div class="card-img-top bg-light d-flex align-items-center justify-content-center py-5">
+                            <i class="fas fa-users fa-4x text-success"></i>
+                        </div>
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Python</span>
+                            <h5 class="card-title fw-bold mt-2">Churn Prediction</h5>
+                            <p class="card-text text-muted small">ML model using Random Forest to identify at-risk
+                                customers, improving retention.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 pb-3">
+                            <a href="#" class="btn btn-sm btn-outline-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0 hover-lift">
+                        <div class="card-img-top bg-light d-flex align-items-center justify-content-center py-5">
+                            <i class="fas fa-truck-loading fa-4x text-warning"></i>
+                        </div>
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Tableau</span>
+                            <h5 class="card-title fw-bold mt-2">Supply Chain Ops</h5>
+                            <p class="card-text text-muted small">Visualized logistics data to identify bottlenecks and
+                                optimize routes.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 pb-3">
+                            <a href="#" class="btn btn-sm btn-outline-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0 hover-lift">
+                        <div class="card-img-top bg-light d-flex align-items-center justify-content-center py-5">
+                            <i class="fas fa-code-branch fa-4x text-info"></i>
+                        </div>
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Python</span>
+                            <h5 class="card-title fw-bold mt-2">ETL Pipeline</h5>
+                            <p class="card-text text-muted small">Automated extraction and transformation pipeline for
+                                10GB+ daily data.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 pb-3">
+                            <a href="#" class="btn btn-sm btn-outline-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0 hover-lift">
+                        <div class="card-img-top bg-light d-flex align-items-center justify-content-center py-5">
+                            <i class="fas fa-shopping-basket fa-4x text-danger"></i>
+                        </div>
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">R</span>
+                            <h5 class="card-title fw-bold mt-2">Market Analysis</h5>
+                            <p class="card-text text-muted small">Association rule mining to discover product purchasing
+                                patterns.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 pb-3">
+                            <a href="#" class="btn btn-sm btn-outline-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0 hover-lift">
+                        <div class="card-img-top bg-light d-flex align-items-center justify-content-center py-5">
+                            <i class="fas fa-calculator fa-4x text-dark"></i>
+                        </div>
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Excel</span>
+                            <h5 class="card-title fw-bold mt-2">Financial Model</h5>
+                            <p class="card-text text-muted small">Complex financial model with scenario analysis macros
+                                for revenue.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 pb-3">
+                            <a href="#" class="btn btn-sm btn-outline-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section (Refactored to List Group for purely Bootstrap styling) -->
+    <section id="experience" class="py-5 bg-light fade-in-section">
+        <div class="container py-5">
+            <h2 class="text-center fw-bold mb-5"><span class="border-bottom border-primary border-3 pb-2">Work
+                    Experience</span></h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="list-group shadow-sm border-0">
+                        <div
+                            class="list-group-item p-4 border-0 mb-3 rounded bg-white position-relative border-start border-primary border-4">
+                            <div class="d-flex w-100 justify-content-between align-items-center mb-1">
+                                <h5 class="mb-1 fw-bold">Senior Data Analyst</h5>
+                                <small class="text-primary fw-bold">Jan 2023 - Present</small>
+                            </div>
+                            <p class="mb-2 fw-medium text-secondary">Tech Solutions Inc. | New York, NY</p>
+                            <p class="mb-0 text-muted small">Values-driven leadership managing a team of 4. Optimized
+                                marketing spend, resulting in a 20% increase in ROI. developed automated reporting
+                                pipelines.</p>
+                        </div>
+
+                        <div
+                            class="list-group-item p-4 border-0 mb-3 rounded bg-white position-relative border-start border-success border-4">
+                            <div class="d-flex w-100 justify-content-between align-items-center mb-1">
+                                <h5 class="mb-1 fw-bold">Business Intelligence Analyst</h5>
+                                <small class="text-success fw-bold">Jun 2020 - Dec 2022</small>
+                            </div>
+                            <p class="mb-2 fw-medium text-secondary">FinCorp Global | Chicago, IL</p>
+                            <p class="mb-0 text-muted small">Designed 15+ interactive Tableau dashboards. Analyzed
+                                customer behavior data to reduce churn rates by 8% through targeted interventions.</p>
+                        </div>
+
+                        <div
+                            class="list-group-item p-4 border-0 mb-3 rounded bg-white position-relative border-start border-info border-4">
+                            <div class="d-flex w-100 justify-content-between align-items-center mb-1">
+                                <h5 class="mb-1 fw-bold">Junior Data Analyst</h5>
+                                <small class="text-info fw-bold">Aug 2018 - May 2020</small>
+                            </div>
+                            <p class="mb-2 fw-medium text-secondary">Retail Analytics Group | Remote</p>
+                            <p class="mb-0 text-muted small">Data cleaning and preprocessing for large datasets.
+                                Performed ad-hoc analysis using Excel and SQL to support daily sales operations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-5 fade-in-section">
+        <div class="container py-5">
+            <h2 class="text-center fw-bold mb-5"><span class="border-bottom border-primary border-3 pb-2">Education &
+                    Certifications</span></h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-header bg-primary text-white py-3">
+                            <h5 class="mb-0"><i class="fas fa-graduation-cap me-2"></i>Education</h5>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="fw-bold mb-1">M.Sc. Data Science</h6>
+                                    <small class="text-muted">2016-2018</small>
+                                </div>
+                                <p class="text-muted small mb-0">University of Technology</p>
+                            </div>
+                            <hr class="text-muted">
+                            <div>
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="fw-bold mb-1">B.Sc. Mathematics</h6>
+                                    <small class="text-muted">2012-2016</small>
+                                </div>
+                                <p class="text-muted small mb-0">State University</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-header bg-success text-white py-3">
+                            <h5 class="mb-0"><i class="fas fa-certificate me-2"></i>Certifications</h5>
+                        </div>
+                        <div class="card-body p-4">
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-3">
+                                    <h6 class="fw-bold mb-0">Google Data Analytics</h6>
+                                    <small class="text-muted">Coursera - 2022</small>
+                                </li>
+                                <li class="mb-3">
+                                    <h6 class="fw-bold mb-0">Power BI Data Analyst Associate</h6>
+                                    <small class="text-muted">Microsoft - 2021</small>
+                                </li>
+                                <li>
+                                    <h6 class="fw-bold mb-0">Tableau Desktop Specialist</h6>
+                                    <small class="text-muted">Tableau - 2020</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light fade-in-section">
+        <div class="container py-5">
+            <h2 class="text-center fw-bold mb-5"><span class="border-bottom border-primary border-3 pb-2">Get In
+                    Touch</span></h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-5">
+                            <div class="text-center mb-4">
+                                <p class="text-muted">Interested in collaborating? I'd love to hear from you!</p>
+                                <div class="d-flex justify-content-center gap-4 mt-3">
+                                    <a href="#" class="text-secondary fs-4"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="text-secondary fs-4"><i class="fab fa-github"></i></a>
+                                    <a href="#" class="text-secondary fs-4"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="name" placeholder="Name">
+                                            <label for="name">Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" id="email" placeholder="Email">
+                                            <label for="email">Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Message" id="message"
+                                                style="height: 120px"></textarea>
+                                            <label for="message">Message</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-center mt-4">
+                                        <button class="btn btn-primary px-5 py-3 rounded-pill fw-bold shadow-sm"
+                                            type="submit">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-0 small opacity-75">&copy; 2024 John Doe | Built with Bootstrap 5</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Simple Script for Scroll Animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Smooth Scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Intersection Observer for Fade In
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-section').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+
+</html>
